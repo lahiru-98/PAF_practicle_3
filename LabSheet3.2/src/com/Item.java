@@ -35,7 +35,7 @@ public class Item {
 	//getters 
 	
 	
-	private static final String URL = "jdbc:mysql://localhost:3306/paf_lab_3";
+	
 	public int getItemID() {
 		return itemID;
 	}
@@ -63,6 +63,8 @@ public class Item {
 				+ itemPrice + ", itemDescription=" + itemDescription + "]";
 	}
 
+	//-------------------------------------------------------------------------------------------
+	private static final String URL = "jdbc:mysql://localhost:3306/paf_lab_3";
 	private static final String DRIVER = "com.mysql.jdbc.Driver";
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "";
@@ -161,12 +163,12 @@ public class Item {
 				
 				//adding two buttons
 				output += "<td><form method='post' action='items.jsp' >"
-						+ "<input name='btnupdate' type='submit' value='update'> "
-						+ "<input name='Id' type='hidden' value='" + itemID +"'>"
+						+ "<input name='btnupdate' type='submit'  class=\"btn btn-primary\" value='update'> "
+						+ "<input name='updateId' type='hidden' value='" + itemID +"'>"
 						+ "</form></td>";
 				
 				output += "<td> <form method='post' action='items.jsp'>"
-						+ "<input name='btnremove' type='submit' value='Remove'>"
+						+ "<input name='btnremove' type='submit' class='btn btn-danger' value='Remove'>"
 						+ "<input name='itemId' type='hidden' value='" + itemID + "'>" 
 								+ "</form></td></tr>";
 				
@@ -184,8 +186,6 @@ public class Item {
 		return output;
 	}
 
-
-	
 	//method to read an spcific item 
 	public Item readOneItem(String id) {
 		
